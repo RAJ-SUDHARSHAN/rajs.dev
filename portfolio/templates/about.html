@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+  <div class="about-container">
+    <div class="about-left">
+      <h1>Hi, my name is <span class="name">Raj Sudharshan</span></h1>
+      <p>I am a software developer specializing in backend development. With over 3 years of experience in the industry, I have a strong foundation in computer science and software engineering principles. I am passionate about building scalable, maintainable, and efficient software solutions.</p>
+    </div>
+    <div class="about-right">
+      <img src="{% static 'images/profile_pic.jpg' %}" alt="Profile picture" />
+    </div>
+  </div>
+{% endblock content %}

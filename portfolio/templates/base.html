@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" />
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" />
+    <title>{% block title %}Raj Sudharshan{% endblock title %}</title>
+  </head>
+  <body>
+    <div class="outer-box">
+      <div class="l-shape-top-left"></div>
+      <div class="social-icons-container">
+        <a href="https://github.com/RAJ-SUDHARSHAN" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sudharshann05/" target="_blank">
+          <i class="fa fa-linkedin fa-2x"></i>
+        </a>
+        <a href="mailto:sudharshann05@gmail.com" target="_blank">
+          <i class="fa fa-envelope fa-2x"></i>
+        </a>        
+      </div>
+      <div class="social-icons-line"></div>
+      
+      <div class="l-shape-bottom-right"></div>
+      <div class="inner-box">
+        <div class="nav-menu">
+          <a href="{% url 'about' %}">About</a>
+          <a href="{% url 'experience' %}">Experience</a>
+          <a href="{% url 'projects' %}">Projects</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          <a href="{% static 'assets/Raj Sudharshan Resume V15.pdf' %}" target="_blank" class="resume-btn">Resume</a>
+        </div>
+        <main class="container">{% block content %}{% endblock content %}</main>
+      </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
+
