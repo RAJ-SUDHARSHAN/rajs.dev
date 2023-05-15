@@ -1,15 +1,51 @@
-{% extends 'base.html' %}
-
-{% load static %}
-
-{% block content %}
-  <div class="about-container">
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div class="about-container">
+  <h1>About me</h1>
+  <div class="about-content">
     <div class="about-left">
-      <h1>Hi, my name is <span class="name">Raj Sudharshan</span></h1>
-      <p>I am a software developer specializing in backend development. With over 3 years of experience in the industry, I have a strong foundation in computer science and software engineering principles. I am passionate about building scalable, maintainable, and efficient software solutions.</p>
+      <p>
+        Hello there! I'm Raj Sudharshan, a software developer who enjoys
+        creating cutting-edge solutions that thrive on the web. My journey into
+        programming began with Python and the Django framework, a path that
+        ignited my passion for modern programming languages and technologies.
+        <br />
+        <br />
+
+        Throughout my career, I've had the privilege of working in diverse
+        environments, from bustling global corporations to agile start-ups, and
+        I've "checkmated" my fair share of bugs along the way. This journey has
+        enabled me to hone my problem-solving and critical thinking skills, all
+        while delivering value for clients. 
+        <br />
+        <br />
+
+        Outside of the tech realm, I'm a national chess player with a strategic
+        mindset. I tend to see parallels between chess and coding - both require
+        foresight, strategy, and sometimes, a bit of creativity to outsmart the
+        opponent or bug. 
+        <br />
+        <br />
+        Here are a few technologies I’ve been working with recently: 
+        <br />
+        <br />
+
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>Django</li>
+          <li>React</li>
+          <li>AWS</li>
+          <li>Flask</li>
+          <li>JavaScript</li>
+        </ul>
+        
+      </p>
     </div>
     <div class="about-right">
-      <img src="{% static 'images/profile_pic.jpg' %}" alt="Profile picture" />
+      <img
+        src="{% static 'images/profile_pic_transparent_bg.png' %}"
+        alt="Profile picture"
+      />
     </div>
   </div>
+</div>
 {% endblock content %}
