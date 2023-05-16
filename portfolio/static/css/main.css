@@ -643,6 +643,39 @@ ul.skills-list li::before {
   }
 }
 
+ul.job-description {
+  position: relative;
+  list-style: none;
+  padding-left: 2rem;
+}
+
+ul.job-description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    var(--color-gradient-1) 20%,
+    var(--color-gradient-2) 80%
+  );
+}
+
+ul.job-description li {
+  position: relative;
+}
+
+ul.job-description li::before {
+  content: "▹";
+  color: #8690ad;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  padding-right: 0.5rem;
+}
+
 /* Media Screens */
 @media (max-width: 485px) and (max-height: 799px) {
   .nav-menu {
