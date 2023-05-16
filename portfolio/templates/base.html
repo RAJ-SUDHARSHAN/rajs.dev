@@ -58,23 +58,25 @@
       <div class="l-shape-bottom-right"></div>
       <div class="inner-box">
         <div class="nav-main-container">
-        <div
-          class="nav-menu {% if request.path == '/' %}nav-animate{% endif %}"
-        >
-          <a href="{% url 'about' %}">About</a>
-          <a href="{% url 'experience' %}">Experience</a>
-          <a href="{% url 'projects' %}">Projects</a>
-          <a href="{% url 'contact' %}">Contact</a>
-          <a
-            href="{% static 'assets/Raj Sudharshan Resume V15.pdf' %}"
-            target="_blank"
-            class="resume-btn"
-            >Resume</a
+          <div
+            class="nav-menu {% if request.path == '/' %}nav-animate{% endif %}"
           >
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'experience' %}">Experience</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a
+              href="{% static 'assets/Raj Sudharshan Resume V15.pdf' %}"
+              target="_blank"
+              class="resume-btn"
+              >Resume</a
+            >
+          </div>
+          <main class="container">
+            {% block content %}{% endblock content %}
+          </main>
         </div>
-        <main class="container">{% block content %}{% endblock content %}</main>
       </div>
-    </div>
     </div>
     <script src="{% static 'js/main.js' %}"></script>
     <script>

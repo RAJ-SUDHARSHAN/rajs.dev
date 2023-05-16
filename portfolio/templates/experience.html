@@ -1,33 +1,88 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <div id="experience" class="section">
-    <div class="section-heading">
-      <h1>Experience</h1>
+  <div class="experience-container">
+    <div class="experience-details">
+      <div class="job-details active" id="e2infosystems">
+        <h2>Python Developer 
+          <span>@
+            <a href="https://www.e2infosystems.com/" class="inline-link" rel="noopener noreferrer" target="_blank">E2Infosystems</a>
+          </span></h2>
+        <p>August 2021 - December 2021</p>
+        <ul>
+          <li>Spearheaded a platform migration project, leading a team of three and achieving a 75% improvement in site performance and response time</li>
+          <li>Migrated PHP websites to React and Django frameworks and integrated REST APIs for seamless operation, resulting in improved efficiency and user experience</li>
+          <li>Proposed, deployed, and delivered three critical customer features, including an innovative auto-assigning sensor device feature, in four months, boosting customer satisfaction and retention</li>
+        </ul>
+      </div>
+      <div class="job-details" id="wipro">
+        <h2>Python Developer 
+          <span>@
+            <a href="https://www.wipro.com/" class="inline-link" rel="noopener noreferrer" target="_blank">Wipro Technologies</a>
+          </span></h2>
+        <p>May 2019 - December 2021</p>
+        <ul>
+          <li>Collaborated with cross-functional teams to promptly resolve complex issues, ensuring availability and reliability of mission-critical applications</li>
+          <li>Performed successful software patches and upgrades on mainframe, eliminating security vulnerabilities and enhancing data protection for banking clients</li>
+        </ul>
+      </div>
+      {% comment %} <div class="job-details" id="northeastern">
+        <h2>Python Developer 
+          <span>@
+            <a href="https://www.e2infosystems.com/" class="inline-link" rel="noopener noreferrer" target="_blank">Wipro Technologies</a>
+          </span></h2>
+        <p>May 2018 - Present</p>
+        <ul>
+          <li>Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more</li>
+          <li>Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements</li>
+          <li>Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders</li>
+          <li>Provide leadership within the engineering department through close collaboration, knowledge sharing, and mentorship</li>
+        </ul>
+      </div> {% endcomment %}
     </div>
-    <div class="experience-container">
-      <div class="experience-item">
-        <h2>Software Developer</h2>
-        <h3>XYZ Inc.</h3>
-        <p class="experience-date">June 2019 - Present</p>
-        <ul class="experience-list">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Suspendisse et erat varius, commodo urna ac, vehicula dolor.</li>
-          <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
-          <li>Proin ut leo in mi commodo luctus.</li>
-        </ul>
-      </div>
-      <div class="experience-item">
-        <h2>Software Engineer</h2>
-        <h3>ABC Corp.</h3>
-        <p class="experience-date">January 2018 - May 2019</p>
-        <ul class="experience-list">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Suspendisse et erat varius, commodo urna ac, vehicula dolor.</li>
-          <li>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</li>
-          <li>Proin ut leo in mi commodo luctus.</li>
-        </ul>
-      </div>
+    <div class="spacer"></div>
+    
+    <div class="company-heading-list">
+      <h2>Where I’ve Worked</h2>
+      <div class="company-list">
+      <ul>
+        <li class="company-item active" data-target="e2infosystems">
+          <span>E2 Infosystems</span>
+        </li>
+        <li class="company-item" data-target="wipro">
+          <span>Wipro Technologies</span>
+        </li>
+        {% comment %} <li class="company-item" data-target="northeastern">
+          <span>Northeastern University</span>
+        </li> {% endcomment %}
+        
+      </ul>
+    </div>
     </div>
   </div>
+
+{% comment %} 
+This script handles the interactivity of the job details section
+When a company item is clicked, the corresponding job details are displayed 
+{% endcomment %}
+
+<script>
+  const companyItems = document.querySelectorAll('.company-item');
+  const jobDetails = document.querySelectorAll('.job-details');
+  
+  companyItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const target = item.getAttribute('data-target');
+  
+      jobDetails.forEach((details) => {
+        if (details.id === target) {
+          details.classList.add('active');
+        } else {
+          details.classList.remove('active');
+        }
+      });
+    });
+  });
+  
+</script>  
 {% endblock %}
