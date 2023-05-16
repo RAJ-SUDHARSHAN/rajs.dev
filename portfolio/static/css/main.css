@@ -469,6 +469,35 @@ ul.skills-list li::before {
   line-height: 1.5rem;
 }
 
+.company-heading-list {
+  height: 100%;
+}
+
+.company-name {
+  background: -webkit-linear-gradient(
+    left,
+    var(--color-gradient-1),
+    var(--color-gradient-2)
+  );
+  background: -o-linear-gradient(
+    right,
+    var(--color-gradient-1),
+    var(--color-gradient-2)
+  );
+  background: -moz-linear-gradient(
+    right,
+    var(--color-gradient-1),
+    var(--color-gradient-2)
+  );
+  background: linear-gradient(
+    to right,
+    var(--color-gradient-1),
+    var(--color-gradient-2)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .experience-details h2,
 .company-heading-list h2 {
   margin-top: 1rem;
@@ -488,14 +517,29 @@ ul.skills-list li::before {
 }
 
 .job-details {
-  display: none;
-  animation: rotate-out 0.5s ease forwards;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: 100%;
+  transition: all 0.2s linear;
+  overflow: hidden;
 }
 
 .job-details.active {
-  display: block;
-  animation: rotate-in 0.5s ease forwards;
-  animation-delay: 0.5s;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.job-details.inactive {
+  visibility: hidden;
+  height: 0;
+}
+
+.job-details.set-min-height {
+  min-height: 320px;
 }
 
 .spacer {
@@ -657,6 +701,10 @@ ul.skills-list li::before {
     font-size: 0.8rem;
   }
 
+  main.container {
+    align-items: normal;
+  }
+
   .about-container h1 {
     padding-left: 1.2rem;
     font-size: 1.3rem;
@@ -690,6 +738,7 @@ ul.skills-list li::before {
     padding-left: 0;
     padding-right: 0;
   }
+
   .experience-container ul {
     font-size: 0.9rem;
   }
@@ -797,6 +846,7 @@ ul.skills-list li::before {
     padding-left: 0;
     padding-right: 0;
   }
+
   .experience-container ul {
     font-size: 0.9rem;
   }
@@ -904,6 +954,7 @@ ul.skills-list li::before {
     padding-left: 0;
     padding-right: 0;
   }
+
   .experience-container ul {
     font-size: 0.9rem;
   }
@@ -1010,6 +1061,7 @@ ul.skills-list li::before {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+
   .experience-container ul {
     font-size: 0.9rem;
   }
@@ -1024,6 +1076,10 @@ ul.skills-list li::before {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
+  }
+
+  .job-details.set-min-height {
+    min-height: 360px;
   }
 }
 
@@ -1076,6 +1132,7 @@ ul.skills-list li::before {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
+
   .experience-container ul {
     font-size: 1rem;
   }
@@ -1090,9 +1147,13 @@ ul.skills-list li::before {
     padding-top: 20px;
     margin-top: 20px;
   }
+
+  .job-details.set-min-height {
+    min-height: 340px;
+  }
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) {
   .intro {
     font-size: 1rem;
   }
@@ -1138,5 +1199,9 @@ ul.skills-list li::before {
 
   .experience-container {
     padding-left: 4rem;
+  }
+
+  .job-details.set-min-height {
+    min-height: 380px;
   }
 }
