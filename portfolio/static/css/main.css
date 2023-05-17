@@ -462,14 +462,15 @@ ul.skills-list li::before {
   justify-content: flex-start;
 }
 
-.experience-container {
+.experience-container, .project-container {
   display: flex;
   justify-content: space-between;
   padding-left: 4rem;
   line-height: 1.5rem;
 }
 
-.company-heading-list {
+.company-heading-list,
+.project-heading-list {
   height: 100%;
 }
 
@@ -499,7 +500,9 @@ ul.skills-list li::before {
 }
 
 .experience-details h2,
-.company-heading-list h2 {
+.project-details h2,
+.company-heading-list h2,
+.project-heading-list h2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
   font-size: 2rem;
@@ -508,15 +511,17 @@ ul.skills-list li::before {
   line-height: 35px;
 }
 
-.experience-details h2 {
+.experience-details h2,
+.project-details h2 {
   margin-top: 3rem;
 }
 
-.experience-details {
+.experience-details, .project-details {
   flex: 1;
 }
 
-.job-details {
+.job-details,
+.project-heading {
   visibility: hidden;
   height: 0;
   opacity: 0;
@@ -526,19 +531,22 @@ ul.skills-list li::before {
   overflow: hidden;
 }
 
-.job-details.active {
+.job-details.active,
+.project-heading.active {
   visibility: visible;
   height: auto;
   opacity: 1;
   transform: scaleX(1);
 }
 
-.job-details.inactive {
+.job-details.inactive,
+.project-heading.inactive {
   visibility: hidden;
   height: 0;
 }
 
-.job-details.set-min-height {
+.job-details.set-min-height,
+.project-heading.set-min-height {
   min-height: 320px;
 }
 
@@ -547,33 +555,39 @@ ul.skills-list li::before {
   max-width: 130px;
 }
 
-.company-heading-list li {
+.company-heading-list li,
+.project-heading-list li  {
   list-style: none;
 }
 
-.company-heading-list {
+.company-heading-list,
+.project-heading-list {
   flex: 0 0 30%;
 }
 
-.company-list {
+.company-list,
+.project-list {
   position: relative;
 }
 
 .company-list::before,
-.company-list::after {
+.company-list::after,
+.project-list::before,
+.project-list::after {
   content: "";
   position: absolute;
   background: white;
   z-index: -1;
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   border-top-left-radius: 1rem;
   top: -2px;
   bottom: 0;
   left: -2px;
 }
 
-.company-list::before {
+.company-list::before,
+.project-list::before {
   background: linear-gradient(
     135deg,
     var(--color-gradient-1) 0%,
@@ -583,7 +597,8 @@ ul.skills-list li::before {
   opacity: 1;
 }
 
-.company-list::after {
+.company-list::after,
+.project-list::after {
   background: linear-gradient(
     135deg,
     var(--color-gradient-2) 0%,
@@ -593,7 +608,8 @@ ul.skills-list li::before {
   opacity: 0;
 }
 
-.company-list ul {
+.company-list ul,
+.project-list ul {
   padding-left: 30px;
   padding-top: 30px;
   margin-top: 30px;
@@ -603,53 +619,68 @@ ul.skills-list li::before {
   z-index: 1;
 }
 
-.company-item {
+.company-item,
+.project-item {
   margin-bottom: 10px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
-.company-item.active span {
+.company-item span, 
+.project-item span {
+  display: inline-block;
+  position: relative;
+}
+
+
+.company-item.active span,
+.project-item.active span {
   transform: rotate(360deg);
   position: relative;
   z-index: 1;
 }
 
-@keyframes rotate-in {
-  from {
-    transform-origin: 100%;
-    opacity: 0;
-    width: 100%;
-    transform: scaleX(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
+.company-item span::before, 
+.project-item span::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--color-gradient-2)0%,var(--color-gradient-1)100%);
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
 }
 
-@keyframes rotate-out {
-  from {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-
-  to {
-    transform-origin: 100%;
-    opacity: 0;
-    width: 100%;
-    transform: scaleX(0);
-  }
+.company-item span::after,
+.project-item span::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--color-gradient-1)0%,var(--color-gradient-2)100%);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
 }
 
-ul.job-description {
+ul.job-description,
+ul.project-description {
   position: relative;
   list-style: none;
   padding-left: 2rem;
 }
 
-ul.job-description::before {
+ul.job-description::before,
+ul.project-description::before {
   content: "";
   position: absolute;
   left: 0;
@@ -663,17 +694,56 @@ ul.job-description::before {
   );
 }
 
-ul.job-description li {
+ul.job-description li,
+ul.project-description li {
   position: relative;
 }
 
-ul.job-description li::before {
+ul.job-description li::before,
+ul.project-description li::before {
   content: "▹";
   color: #8690ad;
   position: absolute;
   left: 0;
   transform: translateX(-100%);
   padding-right: 0.5rem;
+}
+
+.github-project-link {
+  display: inline-block;
+  padding-top: 10px; 
+  color: inherit; 
+  text-decoration: none; 
+}
+
+.github-project-link span {
+  position: relative;
+}
+
+.github-project-link span::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--color-gradient-2)0%,var(--color-gradient-1)100%);
+  opacity: 1;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.github-project-link span::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(270deg,var(--color-gradient-1)0%,var(--color-gradient-2)100%);
+  opacity: 0;
+  transition: all .3s ease-in-out;
+  display: inline-block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
 }
 
 /* Media Screens */
@@ -766,23 +836,26 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .experience-container ul {
+  .experience-container ul, .project-container ul {
     font-size: 0.9rem;
   }
 
   .experience-details h2,
-  .company-heading-list h2 {
+  .project-details h2,
+  .company-heading-list h2,
+  .project-heading-list h2 {
     margin-top: 0;
     font-size: 1.5rem;
   }
 
-  .company-list ul {
+  .company-list ul,
+  .project-list ul {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
@@ -874,23 +947,26 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .experience-container ul {
+  .experience-container ul, .project-container ul {
     font-size: 0.9rem;
   }
 
   .experience-details h2,
-  .company-heading-list h2 {
+  .project-details h2,
+  .company-heading-list h2,
+  .project-heading-list h2 {
     margin-top: 0;
     font-size: 1.5rem;
   }
 
-  .company-list ul {
+  .company-list ul,
+  .project-list ul {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
@@ -982,23 +1058,26 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
   }
 
-  .experience-container ul {
+  .experience-container ul, .project-container ul {
     font-size: 0.9rem;
   }
 
   .experience-details h2,
-  .company-heading-list h2 {
+  .project-details h2,
+  .company-heading-list h2,
+  .project-heading-list h2 {
     margin-top: 0;
     font-size: 1.5rem;
   }
 
-  .company-list ul {
+  .company-list ul,
+  .project-list ul {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
@@ -1089,29 +1168,33 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
     padding-left: 2rem;
     padding-right: 2rem;
   }
 
-  .experience-container ul {
+  .experience-container ul, .project-container ul {
     font-size: 0.9rem;
   }
 
   .experience-details h2,
-  .company-heading-list h2 {
+  .project-details h2,
+  .company-heading-list h2,
+  .project-heading-list h2 {
     margin-top: 0;
     font-size: 1.5rem;
   }
 
-  .company-list ul {
+  .company-list ul,
+  .project-list ul {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
   }
 
-  .job-details.set-min-height {
+  .job-details.set-min-height,
+  .project-heading.set-min-height {
     min-height: 360px;
   }
 }
@@ -1160,28 +1243,32 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     flex-direction: column;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
   }
 
-  .experience-container ul {
+  .experience-container ul, .project-container ul {
     font-size: 1rem;
   }
 
   .experience-details h2,
-  .company-heading-list h2 {
+  .project-details h2,
+  .company-heading-list h2,
+  .project-heading-list h2 {
     font-size: 1.7rem;
   }
 
-  .company-list ul {
+  .company-list ul,
+  .project-list ul {
     padding-left: 20px;
     padding-top: 20px;
     margin-top: 20px;
   }
 
-  .job-details.set-min-height {
+  .job-details.set-min-height,
+  .project-heading.set-min-height {
     min-height: 340px;
   }
 }
@@ -1230,11 +1317,12 @@ ul.job-description li::before {
     display: none;
   }
 
-  .experience-container {
+  .experience-container, .project-container {
     padding-left: 4rem;
   }
 
-  .job-details.set-min-height {
+  .job-details.set-min-height,
+  .project-heading.set-min-height {
     min-height: 380px;
   }
 }
