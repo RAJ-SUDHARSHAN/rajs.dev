@@ -1,10 +1,38 @@
 {% extends 'base.html' %} {% block content %}
 <div class="project-container">
   <div class="project-details">
-    <div class="project-heading active set-min-height" id="sssserpent-struggle">
+    <div class="project-heading active set-min-height" id="DineQ">
+      <h2>
+        DineQ
+      </h2>
+      <p>June 2023</p>
+
+      <ul class="project-description">
+        <li>
+          Pioneered the development of DineQ, a comprehensive Android dining application that enhances the dining experience with features like virtual queue management, in-app ordering, and a digital tab.
+        </li>
+        <li>
+          Constructed a robust backend using the Django Rest Framework and Square API to manage orders, invoices, menus, and inventory, complemented by an intuitive and user-friendly Flutter frontend.
+        </li>
+        <li>
+          Incorporated geofencing technology and Google Maps API for efficient restaurant discovery and queue management, backed by powerful geolocation system using PostGIS for sophisticated location-based querying.
+        </li>
+        <div class="links">
+          <a href="https://github.com/RAJ-SUDHARSHAN/DineQ_Backend" class="github-project-link" target="_blank">
+            <span>Github</span>
+          </a>
+          <a href="https://drive.google.com/file/d/1qS1O014vUBZECEdzcn1NuPgiaHLz1qFN/view?usp=sharing" class="github-project-link" target="_blank">
+            <span>DineQ app</span>
+          </a>
+          <a href="https://drive.google.com/file/d/175erRkID43iZGUvqUMwsfH264PongSKd/view?usp=sharing" class="github-project-link" target="_blank">
+            <span>DineQ Restaurant app</span>
+          </a>
+        </div>
+      </ul>
+    </div>
+    <div class="project-heading inactive" id="sssserpent-struggle">
       <h2>
         Sssserpent Struggle
-        {% comment %} <span class="tech-stack">Tech Stack: Python, Pygame</span> {% endcomment %}
       </h2>
       <p>April 2023</p>
 
@@ -27,9 +55,6 @@
     <div class="project-heading inactive" id="cloud-data-pipeline">
       <h2>
         Low Latency Cloud Data Pipeline
-        {% comment %} <span class="tech-stack"
-          >Tech Stack: AWS Lambda, Redshift, SQS, CloudWatch</span
-        > {% endcomment %}
       </h2>
       <p>February 2023</p>
       <ul class="project-description">
@@ -52,13 +77,7 @@
     <div class="project-heading inactive" id="trailtrack">
       <h2>
         TrailTrack
-        {% comment %} <span class="tech-stack"
-          >Tech Stack: Python, Flask, Supabase, Firebase, React</span
-        > {% endcomment %}
       </h2>
-      {% comment %} <p class="tech-stack"
-          >Tech Stack: Python, Flask, Supabase, Firebase, React</p
-        > {% endcomment %}
       <p>December 2022</p>
       <ul class="project-description">
         <li>
@@ -83,7 +102,10 @@
     <h2>Projects</h2>
     <div class="project-list">
       <ul>
-        <li class="project-item active" data-target="sssserpent-struggle">
+        <li class="project-item active" data-target="DineQ">
+          <span>DineQ</span>
+        </li>
+        <li class="project-item" data-target="sssserpent-struggle">
           <span>Sssserpent Struggle</span>
         </li>
         <li class="project-item" data-target="cloud-data-pipeline">
@@ -96,12 +118,6 @@
     </div>
   </div>
 </div>
-
-{% comment %} 
-This script handles the interactivity of the project details
-section When a project item is clicked, the corresponding project details are
-displayed 
-{% endcomment %}
 
 <script>
   const projectItems = document.querySelectorAll(".project-item");

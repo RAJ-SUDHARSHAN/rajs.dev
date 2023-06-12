@@ -601,8 +601,8 @@ ul.skills-list li::before {
   position: absolute;
   background: white;
   z-index: -1;
-  width: 4rem;
-  height: 4rem;
+  width: 6rem;
+  height: 6rem;
   border-top-left-radius: 1rem;
   top: -2px;
   bottom: 0;
@@ -737,6 +737,11 @@ ul.project-description li::before {
   left: 0;
   transform: translateX(-100%);
   padding-right: 0.5rem;
+}
+
+.links a {
+  margin-right: 25px;
+  font-size: 1.1rem;
 }
 
 .github-project-link {

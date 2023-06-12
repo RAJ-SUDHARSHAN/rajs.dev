@@ -64,10 +64,9 @@
             <a href="{% url 'about' %}">About</a>
             <a href="{% url 'experience' %}">Experience</a>
             <a href="{% url 'projects' %}">Projects</a>
-            {% comment %} <a href="{% url 'contact' %}">Contact</a> {% endcomment %}
             <div class="resume-btn-wrapper">
             <a
-              href="{% static 'assets/Raj Sudharshan Resume V15.pdf' %}"
+              href="{% static 'assets/Raj Sudharshan Resume V16.pdf' %}"
               target="_blank"
               class="resume-btn"
               >Resume</a
@@ -86,16 +85,5 @@
         $(".outer-box").removeClass("frame-animate");
       });
     </script>
-    {% comment %} <script>
-      window.onload = function() {
-        setTimeout(function() {
-          var resumeBtn = document.querySelector('.resume-btn');
-          if (resumeBtn) {
-            resumeBtn.style.backgroundColor = 'var(--color-main-bg)';
-          }
-        }, 900);  // Adjust the delay time as needed.
-      }
-      
-    </script> {% endcomment %}
   </body>
 </html>
