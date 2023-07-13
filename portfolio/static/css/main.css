@@ -443,7 +443,7 @@ main.container {
 .about-left p {
   font-size: 1rem;
   line-height: 1.5;
-  text-align: left;
+  text-align: justify;
   margin-bottom: 0;
 }
 
@@ -493,7 +493,9 @@ ul.skills-list li::before {
 
 .company-heading-list,
 .project-heading-list {
-  height: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
 
 .company-name {
@@ -570,7 +572,7 @@ ul.skills-list li::before {
 
 .job-details.set-min-height,
 .project-heading.set-min-height {
-  min-height: 320px;
+  /* min-height: 320px; */
 }
 
 .spacer {
@@ -727,6 +729,7 @@ ul.project-description::before {
 ul.job-description li,
 ul.project-description li {
   position: relative;
+  text-align: justify;
 }
 
 ul.job-description li::before,
@@ -997,8 +1000,9 @@ ul.project-description li::before {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
   }
-
+  
   .experience-container ul,
   .project-container ul {
     font-size: 0.9rem;
@@ -1114,6 +1118,7 @@ ul.project-description li::before {
     flex-direction: column;
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
   }
 
   .experience-container ul,
@@ -1228,6 +1233,10 @@ ul.project-description li::before {
     padding-right: 2rem;
   }
 
+  .project-container{
+    height: 100%;
+  }
+
   .experience-container ul,
   .project-container ul {
     font-size: 0.9rem;
@@ -1303,6 +1312,10 @@ ul.project-description li::before {
     flex-direction: column;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+  }
+
+  .project-container{
+    height: 100%;
   }
 
   .experience-container ul,
@@ -1381,6 +1394,6 @@ ul.project-description li::before {
 
   .job-details.set-min-height,
   .project-heading.set-min-height {
-    min-height: 380px;
+    /* min-height: 380px; */
   }
 }

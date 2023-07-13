@@ -9,13 +9,13 @@
 
       <ul class="project-description">
         <li>
-          Pioneered the development of DineQ, a comprehensive Android dining application that enhances the dining experience with features like virtual queue management, in-app ordering, and a digital tab.
-        </li>
+          DineQ, a product of the 2023 Square Developer Hackathon, is a dual-app solution designed to revolutionize the dining experience for both customers and restaurant owners. Developed using Django Rest Framework, Square API, PostgreSQL, and Flutter, it introduces a virtual queue system, in-app ordering, and a digital tab.
+        </li> <br>
         <li>
-          Constructed a robust backend using the Django Rest Framework and Square API to manage orders, invoices, menus, and inventory, complemented by an intuitive and user-friendly Flutter frontend.
-        </li>
+          The customer app, a standout for its virtual queue feature, utilizes geofencing technology and Google Maps API to enable customers to locate nearby restaurants and join a virtual queue from their current location. It eradicates the need for physical queues, cuts down wait times, and streamlines the ordering and payment process through the integration of Square API.
+        </li> <br>
         <li>
-          Incorporated geofencing technology and Google Maps API for efficient restaurant discovery and queue management, backed by powerful geolocation system using PostGIS for sophisticated location-based querying.
+          The restaurant owner app serves as a robust management tool. It facilitates seamless menu and inventory management, allows for the release of seats for new customers, and ensures secure and efficient payment processing, all made possible by the integration of Square API.
         </li>
         <div class="links">
           <a href="https://github.com/RAJ-SUDHARSHAN/DineQ_Backend" class="github-project-link" target="_blank">
@@ -26,6 +26,9 @@
           </a>
           <a href="https://drive.google.com/file/d/175erRkID43iZGUvqUMwsfH264PongSKd/view?usp=sharing" class="github-project-link" target="_blank">
             <span>DineQ Restaurant app</span>
+          </a>
+          <a href="https://devpost.com/software/dineq" class="github-project-link" target="_blank">
+            <span>Devpost submission</span>
           </a>
         </div>
       </ul>
@@ -38,18 +41,22 @@
 
       <ul class="project-description">
         <li>
-          Reinvented the classic snake game using Python and Pygame, introducing
-          dynamic obstacles and strategic enemy snakes with intelligent
-          behavior.
-        </li>
+          Sssserpent Struggle, developed during the Pygames Devpost Hackathon, is a tribute to the iconic Snake Game that has entertained generations. This project, built using Python and the Pygame library, revives the retro game while introducing new elements to engage today's players. The game is designed to test players' skills and strategy, as they navigate a snake through a playing field, consuming pellets to grow in length. The added challenge is the presence of enemy snakes, also pursuing the same food using a greedy path-finding algorithm.
+        </li> <br>
         <li>
-          Exhibited proficiency in algorithm design and optimization by devising
-          an efficient path-finding algorithm for enemy snakes, ensuring a
-          seamless and visually engaging gaming experience.
+          The game stands out for its simplistic yet visually appealing design, smooth and responsive gameplay mechanics, and gradually increasing difficulty as the snake grows in length. The game also features four enemy snakes with advanced path-finding algorithms and blocks that require strategic navigation to avoid or overcome.
         </li>
-        <a href="https://github.com/RAJ-SUDHARSHAN/Sssserpent-Struggle" class="github-project-link" target="_blank">
-          <span>Github</span>
-        </a>
+        <div class="links">
+          <a href="https://github.com/RAJ-SUDHARSHAN/Sssserpent-Struggle" class="github-project-link" target="_blank">
+            <span>Github</span>
+          </a>
+          <a href="https://rajsudharshan.itch.io/sssserpent-struggle" class="github-project-link" target="_blank">
+            <span>Try it out</span>
+          </a>
+          <a href="https://devpost.com/software/sssserpent-struggle" class="github-project-link" target="_blank">
+            <span>Devpost submission</span>
+          </a>
+        </div>
       </ul>
     </div>
     <div class="project-heading inactive" id="cloud-data-pipeline">
@@ -59,19 +66,22 @@
       <p>February 2023</p>
       <ul class="project-description">
         <li>
-          Built a scalable and efficient serverless cloud-native data pipeline
-          using Python and AWS, with real-time updates and proactive monitoring
-          with CloudWatch for increased reliability and minimal downtime.
-        </li>
+          The Real-Time Cloud Data Pipeline is a robust, cloud-based solution designed to handle, process, and update millions of real-time transaction data. The primary objective was to create a system that ensures every transaction is processed and stored efficiently, thereby facilitating swift business analytics and reporting.
+        </li> <br>
         <li>
-          Created a low-latency reporting solution featuring real-time dashboard
-          filter adjustments, guaranteeing near-instant data availability and
-          responsiveness. Streamlined decision-making for stakeholders and
-          executives, leading to improved business outcomes.
+          The solution operates on three core components: Data Collection, Data Processing, and Data Analysis. Data Collection uses an API Gateway to accept incoming transaction data, which is then processed and queued. Data Processing involves a Lambda function that inserts the transaction data into an RDS database. Data Analysis uses CloudWatch rules to trigger periodic updates in the Redshift database, providing an up-to-date view of the transaction data for reporting and analytics.
+        </li> <br>
+        <li>
+          The project is distinguished by its scalability and efficiency. It employs an SQS queue-triggered system for efficient data processing and a CloudWatch rules-based system for regular data transfer from RDS to Redshift. This design enables efficient data analysis, cost-effective reporting, and swift dashboard updates, demonstrating the power of AWS services in creating efficient, scalable, and real-time data pipelines for insightful decision-making.
         </li>
-        <a href="https://github.com/RAJ-SUDHARSHAN/Low-Latency-Cloud-Data-Pipeline" class="github-project-link" target="_blank">
-          <span>Github</span>
-        </a>
+        <div class="links">
+          <a href="https://github.com/RAJ-SUDHARSHAN/Low-Latency-Cloud-Data-Pipeline" class="github-project-link" target="_blank">
+            <span>Github</span>
+          </a>
+          <a href="https://github.com/RAJ-SUDHARSHAN/Low-Latency-Cloud-Data-Pipeline/blob/main/AWS_Architecture_explanation_doc.pdf" class="github-project-link" target="_blank">
+            <span>Architecture Document</span>
+          </a>
+        </div>
       </ul>
     </div>
     <div class="project-heading inactive" id="trailtrack">
@@ -81,40 +91,40 @@
       <p>December 2022</p>
       <ul class="project-description">
         <li>
-          Developed a real-time emergency reporting webapp with a location
-          tracking feature, allowing parents to monitor child’s location in
-          real-time for added safety.
-        </li>
+          TrailTrack, a runner-up project in the Google Developer Student Club (DSC) Hackathon conducted by Northeastern University, is a progressive web application designed to enhance child safety. It uses real-time location tracking technology to provide parents with up-to-date information on their child's whereabouts, offering a powerful tool for safety and awareness.
+        </li> <br>
         <li>
-          Implemented a live tracking system to provide up-to-date information
-          on child’s location, ensuring parents always receive accurate
-          information.
+          The application serves as a comprehensive safety tool, offering real-time emergency reporting and location tracking capabilities. Its live tracking system ensures parents are constantly updated about their child's location, allowing them to act promptly in case of emergencies. A standout feature of TrailTrack is its push notification system. This system sends alerts to parents if their child moves beyond a predefined boundary, providing an additional layer of security and peace of mind.
         </li>
-        <a href="https://github.com/RAJ-SUDHARSHAN/DSCNU_ByteWarriors_Backend" class="github-project-link" target="_blank">
-          <span>Github</span>
-        </a>
+        <div class="links">
+          <a href="https://github.com/RAJ-SUDHARSHAN/DSCNU_ByteWarriors_Backend" class="github-project-link" target="_blank">
+            <span>Github</span>
+          </a>
+        </div>
       </ul>
     </div>
   </div>
   <div class="spacer"></div>
 
   <div class="project-heading-list">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <ul>
-        <li class="project-item active" data-target="DineQ">
-          <span>DineQ</span>
-        </li>
-        <li class="project-item" data-target="sssserpent-struggle">
-          <span>Sssserpent Struggle</span>
-        </li>
-        <li class="project-item" data-target="cloud-data-pipeline">
-          <span>Low Latency Cloud Data Pipeline</span>
-        </li>
-        <li class="project-item" data-target="trailtrack">
-          <span>TrailTrack</span>
-        </li>
-      </ul>
+    <div>
+      <h2>Projects</h2>
+      <div class="project-list">
+        <ul>
+          <li class="project-item active" data-target="DineQ">
+            <span>DineQ</span>
+          </li>
+          <li class="project-item" data-target="sssserpent-struggle">
+            <span>Sssserpent Struggle</span>
+          </li>
+          <li class="project-item" data-target="cloud-data-pipeline">
+            <span>Low Latency Cloud Data Pipeline</span>
+          </li>
+          <li class="project-item" data-target="trailtrack">
+            <span>TrailTrack</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
